@@ -1,4 +1,6 @@
 # Global_Style_Transfer
 
-##code run
-`hello`
+## run the test code
+`bash test.sh`
+## Calculate the ArtFID
+`CUDA_VISIBLE_DEVICES=0 python3 -m art_fid --style_images path/to/style-images --content_images path/to/content-images --stylized_images path/to/stylized-images`
