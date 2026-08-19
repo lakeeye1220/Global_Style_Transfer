@@ -3,9 +3,9 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2608.11546-b31b1b.svg)](https://arxiv.org/abs/2608.11546)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-This repository is an official implementation of **Global Style Transfer** (📌 **Accepted to ECCV 2026**).
+[📌 **Accepted to ECCV 2026!!**] This repository is an official implementation of **Global Style Transfer**.
 
-📄 Paper: [arXiv:2608.11546](https://arxiv.org/abs/2608.11546)
+📄 Paper: [Through Van Gogh's Eyes: Global Style Transfer with Diffusion Model](https://arxiv.org/abs/2608.11546)
 
 ---
 
