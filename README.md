@@ -2,6 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2608.11546-b31b1b.svg)](https://arxiv.org/abs/2608.11546)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 📄 Paper: [arXiv:2608.11546](https://arxiv.org/abs/2608.11546)
 
 ---
