@@ -19,7 +19,7 @@ import torch.backends.cudnn as cudnn
 import torch.distributed as dist
 
 from torchvision import transforms
-
+import hf_compat
 from diffusers_modified.src.diffusers import AutoencoderKL, DDPMScheduler, StableDiffusionPipeline, UNet2DConditionModel
 from diffusers.optimization import get_scheduler
 
@@ -211,7 +211,7 @@ def main():
             "input_conditions": input_conditions,
         }
 
-    train_dataloader = get_dataloader(args.train_data_dir, batch_size=args.train_batch_size, shuffle=True,
+    train_dataloader = get_dataloader(args.label_resize_train_data_dir, batch_size=args.train_batch_size, shuffle=True,
                                       transform=train_transforms, tokenizer=tokenize_captions, collate_fn=collate_fn,
                                       num_workers=4, max_concept_length=100, select=args.select)
 
@@ -243,7 +243,7 @@ def main():
     num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
     if overrode_max_train_steps:
         args.max_train_steps = args.num_train_epochs * num_update_steps_per_epoch
-    args.num_train_epochs = math.ceil(args.max_train_steps / num_update_steps_per_epoch)
+    #args.num_train_epochs = math.ceil(args.max_train_steps / num_update_steps_per_epoch)
 
     if accelerator.is_main_process:
         exp_name = f'{args.output_dir}_prompt_{args.prompt}_lr{str(args.learning_rate)}'

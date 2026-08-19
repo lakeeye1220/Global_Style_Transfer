@@ -1,0 +1,30 @@
+2026-08-18 14:03:40,523 INFO    MainThread:4149159 [wandb_setup.py:_flush():76] Current SDK version is 0.17.5
+2026-08-18 14:03:40,523 INFO    MainThread:4149159 [wandb_setup.py:_flush():76] Configure stats pid to 4149159
+2026-08-18 14:03:40,523 INFO    MainThread:4149159 [wandb_setup.py:_flush():76] Loading settings from /home/yujin/.config/wandb/settings
+2026-08-18 14:03:40,523 INFO    MainThread:4149159 [wandb_setup.py:_flush():76] Loading settings from /home/yujin/style_transfer_jh/Global_Style_Transfer/wandb/settings
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/home/yujin/style_transfer_jh/Global_Style_Transfer/train.py', 'program': '/home/yujin/style_transfer_jh/Global_Style_Transfer/train.py'}
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_setup.py:_flush():76] Applying login settings: {}
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_init.py:_log_setup():529] Logging user logs to /home/yujin/style_transfer_jh/Global_Style_Transfer/wandb/run-20260818_140340-7zv4kvsf/logs/debug.log
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_init.py:_log_setup():530] Logging internal logs to /home/yujin/style_transfer_jh/Global_Style_Transfer/wandb/run-20260818_140340-7zv4kvsf/logs/debug-internal.log
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_init.py:init():569] calling init triggers
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_init.py:init():576] wandb.init called with sweep_config: {}
+config: {}
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_init.py:init():619] starting backend
+2026-08-18 14:03:40,524 INFO    MainThread:4149159 [wandb_init.py:init():623] setting up manager
+2026-08-18 14:03:40,527 INFO    MainThread:4149159 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2026-08-18 14:03:40,543 INFO    MainThread:4149159 [wandb_init.py:init():631] backend started and connected
+2026-08-18 14:03:40,551 INFO    MainThread:4149159 [wandb_init.py:init():720] updated telemetry
+2026-08-18 14:03:40,562 INFO    MainThread:4149159 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2026-08-18 14:03:41,270 INFO    MainThread:4149159 [wandb_run.py:_on_init():2435] communicating current version
+2026-08-18 14:03:41,362 INFO    MainThread:4149159 [wandb_run.py:_on_init():2444] got version response upgrade_message: "wandb version 0.28.2 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2026-08-18 14:03:41,362 INFO    MainThread:4149159 [wandb_init.py:init():804] starting run threads in backend
+2026-08-18 14:04:00,060 INFO    MainThread:4149159 [wandb_run.py:_console_start():2413] atexit reg
+2026-08-18 14:04:00,060 INFO    MainThread:4149159 [wandb_run.py:_redirect():2255] redirect: wrap_raw
+2026-08-18 14:04:00,061 INFO    MainThread:4149159 [wandb_run.py:_redirect():2320] Wrapping output streams.
+2026-08-18 14:04:00,061 INFO    MainThread:4149159 [wandb_run.py:_redirect():2345] Redirects installed.
+2026-08-18 14:04:00,092 INFO    MainThread:4149159 [wandb_init.py:init():847] run started, returning control to user process
+2026-08-18 14:04:00,095 INFO    MainThread:4149159 [wandb_run.py:_config_callback():1382] config_cb None None {'pretrained_model_name_or_path': 'CompVis/stable-diffusion-v1-4', 'revision': None, 'max_train_samples': None, 'cache_dir': None, 'seed': None, 'center_crop': False, 'random_flip': False, 'logging_dir': 'logs', 'mixed_precision': None, 'report_to': 'wandb', 'local_rank': -1, 'max_train_steps': 100, 'gradient_checkpointing': False, 'train_data_dir': '../vangogh2photo/trainA', 'label_resize_train_data_dir': './datasets/syn_vangogh', 'artist_name': 'vangogh', 'output_dir': 'exps/exp_vangogh', 'resolution': 512, 'model_type': 'MLP', 'train_batch_size': 1, 'gradient_accumulation_steps': 1, 'num_train_epochs': 1, 'select': 'random', 'learning_rate': 0.1, 'scale_lr': False, 'lr_scheduler': 'constant', 'lr_warmup_steps': 0, 'adam_beta1': 0.9, 'adam_beta2': 0.999, 'adam_weight_decay': 0, 'adam_epsilon': 1e-08, 'max_grad_norm': 1.0, 'skip_evaluation': False, 'log_every_steps': 1000, 'log_every_epochs': 5, 'prompt': '', 'template_key': '0', 'concept': None, 'clip_attributes': None, 'num_test_samples': 2, 'original_sd': False, 'interpolate_type': '', 'interpolate_steps': None, 'evaluation_type': 'eval', 'image_dir': 'images', 'prompt_file': None, 'src_img_dir': None, 'gen_img_dir': None, 'kid_subset_size': 1000, 'use_sld': False, 'use_esd': False, 'negative_prompt': None, 'scheduler': 'ddim', 'num_inference_steps': 50, 'fp16': False, 'content_img': '../content_image/200.jpg', 'mlp_weight': 1.5, 'lambda_c': 0.9, 'lambda_s': 0.9, 'lambda_g': 0.9}
+2026-08-18 14:04:54,870 WARNING MsgRouterThr:4149159 [router.py:message_loop():77] message_loop has been closed

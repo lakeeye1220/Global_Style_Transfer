@@ -1,0 +1,307 @@
+08/18/2026 15:16:41 - INFO - __main__ - [RANK 0] ***** Running training *****
+08/18/2026 15:16:41 - INFO - __main__ - [RANK 0]   Num examples = 874
+08/18/2026 15:16:41 - INFO - __main__ - [RANK 0]   Num Epochs = 200
+08/18/2026 15:16:41 - INFO - __main__ - [RANK 0]   Instantaneous batch size per device = 8
+08/18/2026 15:16:41 - INFO - __main__ - [RANK 0]   Total train batch size (w. parallel, distributed & accumulation) = 8
+08/18/2026 15:16:41 - INFO - __main__ - [RANK 0]   Gradient Accumulation steps = 1
+08/18/2026 15:16:41 - INFO - __main__ - [RANK 0]   Total optimization steps = 100
+Steps:   0%|                                             | 0/100 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:  99%|██████████▉| 99/100 [01:54<00:01,  1.11s/it, lr=0.1, step_loss=0.069]
+
+Steps: 100%|██████████| 100/100 [01:55<00:00,  1.11s/it, lr=0.1, step_loss=0.312]08/18/2026 15:18:37 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 104it [02:12,  2.54s/it, lr=0.1, step_loss=0.278]
+
+Steps: : 105it [02:13,  2.19s/it, lr=0.1, step_loss=0.223]08/18/2026 15:18:55 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 109it [02:29,  2.69s/it, lr=0.1, step_loss=0.159]
+
+Steps: : 110it [02:31,  2.30s/it, lr=0.1, step_loss=0.0506]08/18/2026 15:19:13 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 114it [02:48,  2.75s/it, lr=0.1, step_loss=0.172]
+
+Steps: : 115it [02:49,  2.35s/it, lr=0.1, step_loss=0.0856]08/18/2026 15:19:31 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 119it [03:05,  2.75s/it, lr=0.1, step_loss=0.13]
+
+Steps: : 120it [03:07,  2.35s/it, lr=0.1, step_loss=0.178]08/18/2026 15:19:49 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 124it [03:23,  2.75s/it, lr=0.1, step_loss=0.25]
+
+Steps: : 125it [03:25,  2.34s/it, lr=0.1, step_loss=0.238]08/18/2026 15:20:06 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 129it [03:41,  2.74s/it, lr=0.1, step_loss=0.22]
+
+Steps: : 130it [03:42,  2.35s/it, lr=0.1, step_loss=0.33]08/18/2026 15:20:24 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+
+Steps: : 135it [04:00,  2.35s/it, lr=0.1, step_loss=0.244]
+
+Steps: : 135it [04:00,  2.35s/it, lr=0.1, step_loss=0.136]08/18/2026 15:20:42 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 139it [04:16,  2.73s/it, lr=0.1, step_loss=0.194]
+
+Steps: : 140it [04:18,  2.34s/it, lr=0.1, step_loss=0.227]08/18/2026 15:20:59 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 144it [04:34,  2.73s/it, lr=0.1, step_loss=0.202]
+
+Steps: : 145it [04:35,  2.33s/it, lr=0.1, step_loss=0.203]08/18/2026 15:21:17 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 149it [04:52,  2.76s/it, lr=0.1, step_loss=0.115]
+
+Steps: : 150it [04:53,  2.35s/it, lr=0.1, step_loss=0.111]08/18/2026 15:21:35 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 154it [05:09,  2.71s/it, lr=0.1, step_loss=0.168]
+
+Steps: : 155it [05:11,  2.31s/it, lr=0.1, step_loss=0.151]08/18/2026 15:21:53 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 159it [05:27,  2.77s/it, lr=0.1, step_loss=0.25]
+
+Steps: : 160it [05:29,  2.37s/it, lr=0.1, step_loss=0.246]08/18/2026 15:22:11 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 165it [05:46,  2.32s/it, lr=0.1, step_loss=0.0744]
+
+Steps: : 165it [05:46,  2.32s/it, lr=0.1, step_loss=0.321] 08/18/2026 15:22:28 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+
+Steps: : 170it [06:04,  2.33s/it, lr=0.1, step_loss=0.11] 08/18/2026 15:22:46 - INFO - __main__ - [RANK 0] Running validation...
+eval with concept: [['vangogh-styled']]
+Num trainable params:  8192000
+
+
+Steps: : 174it [06:20,  2.72s/it, lr=0.1, step_loss=0.191]
+
+Steps: : 175it [06:22,  2.33s/it, lr=0.1, step_loss=0.421]08/18/2026 15:23:04 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 179it [06:38,  2.74s/it, lr=0.1, step_loss=0.107]
+
+Steps: : 180it [06:40,  2.36s/it, lr=0.1, step_loss=0.104]08/18/2026 15:23:21 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 184it [06:56,  2.72s/it, lr=0.1, step_loss=0.0194]
+
+Steps: : 185it [06:57,  2.34s/it, lr=0.1, step_loss=0.143] 08/18/2026 15:23:39 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 189it [07:14,  2.74s/it, lr=0.1, step_loss=0.313]
+
+Steps: : 190it [07:15,  2.34s/it, lr=0.1, step_loss=0.142]08/18/2026 15:23:57 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 194it [07:31,  2.74s/it, lr=0.1, step_loss=0.284]
+
+Steps: : 195it [07:33,  2.35s/it, lr=0.1, step_loss=0.173]08/18/2026 15:24:15 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 200it [07:50,  2.31s/it, lr=0.1, step_loss=0.258]
+
+Steps: : 200it [07:50,  2.31s/it, lr=0.1, step_loss=0.349]08/18/2026 15:24:32 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+
+Steps: : 205it [08:08,  2.33s/it, lr=0.1, step_loss=0.194]08/18/2026 15:24:50 - INFO - __main__ - [RANK 0] Running validation...
+eval with concept: [['vangogh-styled']]
+Num trainable params:  8192000
+
+
+
+Steps: : 210it [08:26,  2.36s/it, lr=0.1, step_loss=0.168]08/18/2026 15:25:08 - INFO - __main__ - [RANK 0] Running validation...
+eval with concept: [['vangogh-styled']]
+Num trainable params:  8192000
+
+
+Steps: : 214it [08:42,  2.73s/it, lr=0.1, step_loss=0.209]
+
+Steps: : 215it [08:44,  2.34s/it, lr=0.1, step_loss=0.295]08/18/2026 15:25:25 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 219it [09:00,  2.74s/it, lr=0.1, step_loss=0.193]
+
+Steps: : 220it [09:01,  2.35s/it, lr=0.1, step_loss=0.189]08/18/2026 15:25:43 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 224it [09:18,  2.74s/it, lr=0.1, step_loss=0.18]
+
+Steps: : 225it [09:19,  2.34s/it, lr=0.1, step_loss=0.225]08/18/2026 15:26:01 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 229it [09:35,  2.73s/it, lr=0.1, step_loss=0.272]
+
+Steps: : 230it [09:37,  2.34s/it, lr=0.1, step_loss=0.229]08/18/2026 15:26:19 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 235it [09:54,  2.34s/it, lr=0.1, step_loss=0.229]
+
+Steps: : 235it [09:55,  2.34s/it, lr=0.1, step_loss=0.207]08/18/2026 15:26:36 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+
+Steps: : 240it [10:12,  2.33s/it, lr=0.1, step_loss=0.218]08/18/2026 15:26:54 - INFO - __main__ - [RANK 0] Running validation...
+eval with concept: [['vangogh-styled']]
+Num trainable params:  8192000
+
+
+Steps: : 244it [10:28,  2.71s/it, lr=0.1, step_loss=0.247]
+
+Steps: : 245it [10:30,  2.33s/it, lr=0.1, step_loss=0.2]  08/18/2026 15:27:12 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 249it [10:46,  2.74s/it, lr=0.1, step_loss=0.189]
+
+Steps: : 250it [10:48,  2.34s/it, lr=0.1, step_loss=0.127]08/18/2026 15:27:29 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 254it [11:04,  2.73s/it, lr=0.1, step_loss=0.283]
+
+Steps: : 255it [11:05,  2.35s/it, lr=0.1, step_loss=0.265]08/18/2026 15:27:47 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 259it [11:22,  2.74s/it, lr=0.1, step_loss=0.277]
+
+Steps: : 260it [11:23,  2.34s/it, lr=0.1, step_loss=0.258]08/18/2026 15:28:05 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 265it [11:40,  2.33s/it, lr=0.1, step_loss=0.252]
+
+Steps: : 265it [11:41,  2.33s/it, lr=0.1, step_loss=0.283]08/18/2026 15:28:23 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+
+Steps: : 270it [11:59,  2.34s/it, lr=0.1, step_loss=0.123]
+
+Steps: : 270it [11:59,  2.34s/it, lr=0.1, step_loss=0.123]08/18/2026 15:28:40 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+
+Steps: : 275it [12:16,  2.33s/it, lr=0.1, step_loss=0.219]08/18/2026 15:28:58 - INFO - __main__ - [RANK 0] Running validation...
+eval with concept: [['vangogh-styled']]
+Num trainable params:  8192000
+
+
+Steps: : 279it [12:32,  2.75s/it, lr=0.1, step_loss=0.19]
+
+Steps: : 280it [12:34,  2.35s/it, lr=0.1, step_loss=0.145] 08/18/2026 15:29:16 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 284it [12:50,  2.73s/it, lr=0.1, step_loss=0.143]
+
+Steps: : 285it [12:52,  2.34s/it, lr=0.1, step_loss=0.154]08/18/2026 15:29:34 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 289it [13:08,  2.72s/it, lr=0.1, step_loss=0.191]
+
+Steps: : 290it [13:10,  2.33s/it, lr=0.1, step_loss=0.269]08/18/2026 15:29:51 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+
+Steps: : 294it [13:26,  2.74s/it, lr=0.1, step_loss=0.202]
+
+Steps: : 295it [13:27,  2.36s/it, lr=0.1, step_loss=0.0882]08/18/2026 15:30:09 - INFO - __main__ - [RANK 0] Running validation...
+Num trainable params:  8192000
+
+Steps: : 298it [13:43,  3.34s/it, lr=0.1, step_loss=0.215]
+
+Steps: : 299it [13:44,  2.76s/it, lr=0.1, step_loss=0.184]

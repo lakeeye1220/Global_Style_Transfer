@@ -1348,14 +1348,10 @@ class StableDiffusionPipelineGuide(DiffusionPipeline, TextualInversionLoaderMixi
         guidance_rescale: float = 0.0,
         controlnet_cond: Optional[torch.FloatTensor] = None,
         controlnet_interpolator = None,
-        content_logits: Optional[torch.FloatTensor]=None,
-        content_img: Optional[torch.FloatTensor]=None,
         lambda_c:Optional[torch.FloatTensor]=None,
         lambda_s:Optional[torch.FloatTensor]=None,
         lambda_g:Optional[torch.FloatTensor]=None,
         clip_guide: bool = False,
-        classifier_guide: bool=False,
-        recon_guide: bool=False
     ):
         """
         Function invoked when calling the pipeline for generation.
@@ -1496,24 +1492,12 @@ class StableDiffusionPipelineGuide(DiffusionPipeline, TextualInversionLoaderMixi
         extra_step_kwargs = self.prepare_extra_step_kwargs(generator, eta)
 
         # 7. Denoising loop
-        #criterion = torch.nn.KLDivLoss()#reduction='batchmean')
         criterion = torch.nn.MSELoss()
-        
-        #model_vgg = tv_models.vgg19(pretrained=True).features.to(device)
-        #model_vgg.eval()
-        #content_img_224 = torch.nn.functional.interpolate(content_img, size=224)
-        
-        #content_logits = classification_model(content_img_224).logits
-        #outputs = classification_model(pixel_values=content_img_224.cuda(), output_hidden_states=True)
 
-        # CLS 토큰 임베딩 (global representation)
-        #content_embedding = outputs.hidden_states[-1][:, 0, :]     # [batch, hidden_dim]
-        #content_embedding  = content_embedding /content_embedding .norm(dim=-1,keepdim=True)
-        #content_logits = content_logits/content_logits.norm(dim=-1,keepdim=True)
-        #content_probs = torch.nn.functional.softmax(content_logits, dim=-1)
         num_warmup_steps = len(timesteps) - num_inference_steps * self.scheduler.order
 
         # 예시 사용
+                # 예시 사용
         extractor = CLIPFeatureExtractor(clip_model, layers=[11])
         
         with self.progress_bar(total=num_inference_steps) as progress_bar:
@@ -1559,88 +1543,20 @@ class StableDiffusionPipelineGuide(DiffusionPipeline, TextualInversionLoaderMixi
                     xt_image = (x_t / 2 + 0.5).clamp(0, 1)
                     gt_temp = torch.nn.functional.interpolate(image, size=224)
                     x_in_temp  = torch.nn.functional.interpolate(xt_image, size=224)
-                        
-                        #print("cifar10 shape :",x_in_temp.shape) # 1 3 32 32
-                    #out = classification_model(x_in_temp)#.logits
-                    #outputs = classification_model(pixel_values=x_in_temp.cuda(), output_hidden_states=True)
-
-                    # CLS 토큰 임베딩 (global representation)
-                    #out_embed = outputs.hidden_states[-1][:, 0, :]     # [batch, hidden_dim]
-                    #print("out shape : ",out.shape)
-                    #img_logits = out/out.norm(dim=-1,keepdim=True)
-                    #out_embed = out_embed/out_embed.norm(dim=-1, keepdim=True)
-                    #out_probs = torch.nn.functional.softmax(out, dim=-1)
-                    #loss = criterion(x0_probs,content_logits)
-                    #loss = lambda_c*criterion(out,content_logits)
-                    #loss = torch.zeros(1)
+                    
                     loss = 0.0
                     if clip_guide:
-                        #content_features = self.get_features(gt_temp, classification_model, feature_layers)
-                        #input_features = self.get_features(x_in_temp, classification_model, feature_layers)
                         content_features = extractor(gt_temp)
-                        #for i, feat in zip([0,5,11], content_features):
-                        #    print(i, feat.shape)  # ex: [B, 197, 768]
-
                         input_features = extractor(x_in_temp)
 
-                        content_loss = self.get_content_loss(input_features[0], content_features[0]) #random.randint(0, len(input_features)))
+                        content_loss = self.get_content_loss(input_features[0], content_features[0])
                         content_weight = lambda_c
                         loss += content_weight * content_loss
                         
-                        '''
-                        #NST loss
-                        input_features = self.get_features(x_in_temp,model_vgg, feature_layers) # feature_layers에 해당하는 layer의 출력값 얻기
-                        content_loss = self.get_content_loss(input_features, content_features, content_layer)
-                        content_weight = 1e1
-                        loss += content_weight * content_loss
-                        '''
-                        '''
-                        img_feat_x0 = clip_model.get_image_features(x_in_temp)
-                        img_feat_x0 = torch.nn.functional.normalize(img_feat_x0, dim=-1)
-
-                        img_feat_x0 = img_feat_x0 / img_feat_x0.norm(dim=-1, keepdim=True)
-
-                        prompt_list = prompt.split()
-                                                
-                        text_inputs = processor(text=prompt_list, return_tensors="pt", padding=True).to(device)
-                        text_feats = clip_model.get_text_features(**text_inputs)
-                        text_feats = text_feats / text_feats.norm(dim=-1, keepdim=True)
-                        logit_scale = clip_model.logit_scale.exp()
-                        logits_x0 = (img_feat_x0 @ text_feats.T) * logit_scale  # (1, len(prompts))
-
-                        #x0_probs = torch.nn.functional.softmax(logits_x0, dim=-1)
-                        loss += lambda_c*criterion(logits_x0,content_logits)
-                        '''
-                        
-                    '''
-                    if classifier_guide:
-                        alpha_prod_t = self.scheduler.alphas_cumprod[t].to(latents.device)          # scalar
-                        alpha_prod_t = alpha_prod_t.view(1, 1, 1, 1)
-                        alpha_prod_t = self.scheduler.alphas_cumprod[t].to(latents.device)          # scalar
-                        alpha_prod_t = alpha_prod_t.view(1, 1, 1, 1)
-                        loss += lambda_c*criterion(out_embed,content_embedding)
-                    '''
-                    #loss = 0.0
-                    if recon_guide:
-                        #loss += lambda_c*torch.nn.MSELoss()(image, content_img)
-                        alpha_prod_t = self.scheduler.alphas_cumprod[t].to(latents.device)          # scalar
-                        alpha_prod_t = alpha_prod_t.view(1, 1, 1, 1)
-                        #print("alpha_prod_t",alpha_prod_t)
-                        loss += lambda_c*torch.nn.MSELoss()(xt_image, image)
-
-                        #print("loss value : ",loss)#, "reconstruction loss : ",recon_loss)
-                    #print("loss : ",loss)
+                    
                     r_grad = torch.autograd.grad(loss, guided_latents, retain_graph=True, create_graph=False)[0]
-                    #print()
-                    #loss.backward()
-                    #print("gradient : ",guided_latents.grad)
-                    #guided_latents = guided_latents + lambda_s*r_grad
                     alpha_prod_t = self.scheduler.alphas_cumprod[t].to(latents.device)      
-                    #guided_latents = guided_latents - ((1-alpha_prod_t)*lambda_s)/2*r_grad
-                    #latents = latents + lambda_g*(guided_latents-latents)
                     latents = latents - (1-alpha_prod_t)*lambda_g*r_grad
-                    #latents  = latents + lambda_g*(1-alpha_prod_t)*r_grad
-                    #extractor.close()
 
                 # call the callback, if provided
                 if i == len(timesteps) - 1 or ((i + 1) > num_warmup_steps and (i + 1) % self.scheduler.order == 0):

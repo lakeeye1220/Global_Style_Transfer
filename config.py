@@ -7,9 +7,7 @@ from typing import Iterable, Optional
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Simple example of a training script.")
-    parser.add_argument("--pretrained_model_name_or_path", type=str, default='CompVis/stable-diffusion-v1-4')
-    #parser.add_argument("--pretrained_model_name_or_path", type=str, default="stabilityai/stable-diffusion-xl-base-1.0")
-    #parser.add_argument("--pretrained_model_name_or_path", type=str, default='stabilityai/stable-diffusion-2-1')
+    parser.add_argument("--pretrained_model_name_or_path", type=str, default='CompVis/stable-diffusion-v1-4',choices=['CompVis/stable-diffusion-v1-4','stabilityai/stable-diffusion-xl-base-1.0','stabilityai/stable-diffusion-2-1'])
     parser.add_argument("--revision",type=str,default=None,required=False,)
     parser.add_argument("--max_train_samples", type=int, default=None)
     parser.add_argument("--cache_dir", type=str, default=None,help="The directory where the downloaded models and datasets will be stored.")
@@ -23,15 +21,17 @@ def parse_args():
     parser.add_argument("--max_train_steps",type=int,default=100,)
     parser.add_argument("--gradient_checkpointing", action="store_true",)
 
-    parser.add_argument("--train_data_dir", type=str, default="datasets/person")
-    parser.add_argument("--output_dir", type=str, default="exps/exp_person")
+    parser.add_argument("--train_data_dir", type=str, default="../vangogh2photo/trainA")
+    parser.add_argument("--label_resize_train_data_dir", type=str, default="./datasets/syn_vangogh")
+    parser.add_argument("--artist_name", type=str, default="vangogh",help="The artist name in the data you have")
+    parser.add_argument("--output_dir", type=str, default="exps/exp_vangogh")
     parser.add_argument("--resolution",type=int,default=512)
     parser.add_argument("--model_type",type=str,default="MLP")
 
     #training
-    parser.add_argument("--train_batch_size", type=int, default=1, help="Batch size (per device) for the training dataloader.")
+    parser.add_argument("--train_batch_size", type=int, default=8, help="Batch size (per device) for the training dataloader.")
     parser.add_argument("--gradient_accumulation_steps",type=int,default=1)
-    parser.add_argument("--num_train_epochs", type=int, default=10)
+    parser.add_argument("--num_train_epochs", type=int, default=200)
     parser.add_argument("--select", type=str, default="random")
 
     parser.add_argument("--learning_rate",type=float,default=0.1,help="Initial learning rate (after the potential warmup period) to use.",)
@@ -60,7 +60,6 @@ def parse_args():
     parser.add_argument('--interpolate_type', type=str, default="") 
     parser.add_argument('--interpolate_steps', nargs='+', type=float) 
 
-    parser.add_argument('--evaluation_type', type=str, default="eval", choices=['eval','interpolate','winobias','i2p'])
     parser.add_argument('--image_dir', type=str, default="images")
     parser.add_argument('--prompt_file', type=str, default=None)
 
@@ -78,7 +77,7 @@ def parse_args():
     parser.add_argument('--num_inference_steps', default=50, type=int)
 
     parser.add_argument('--fp16', action='store_true', help="use float16 precision")
-    parser.add_argument('--content_img',default='../content_image/200.jpg', type=str, help='content image directory')
+    parser.add_argument('--content_img',default='../vangogh2photo/trainB/' , type=str, help='content image directory')
     parser.add_argument("--mlp_weight", type=float, default=1.5, help="style weight of MLP layer.")
     parser.add_argument("--lambda_c", type=float, default=0.9, help="logit criterion.")
     parser.add_argument("--lambda_s", type=float, default=0.9, help="scale parameter.")
