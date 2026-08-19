@@ -1,4 +1,4 @@
-# Through Van Gogh's Eyes: Global Style Transfer with Diffusion Model
+# 🎨 Through Van Gogh's Eyes: Global Style Transfer with Diffusion Model
 
 [![arXiv](https://img.shields.io/badge/arXiv-2608.11546-b31b1b.svg)](https://arxiv.org/abs/2608.11546)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -9,7 +9,7 @@
 
 ## :high_brightness: Introduction
 
-<p align="center"> <img src="figure/global_style_transfer.png" alt="One-to-One vs. Many-to-One style transfer" width="90%"> </p>
+<p align="center"> <img src="figure/global_style_transfer.png" alt="One-to-One vs. Many-to-One style transfer" width="75%"> </p>
 
 **Global Style Transfer (GST)** is an artistic image synthesis paradigm that moves beyond the traditional *One-to-One* style transfer setting — where a single content image is stylized using one or a few reference artworks — toward a **Many-to-One** setting that aggregates an artist's *entire* body of work into a single, coherent style representation.
 
@@ -19,10 +19,7 @@
 
 To address this, the paper introduces two core components:
 
-- **Global Style Guidance (GSG)** — <cite index="13-1">learns a residual global style offset in the intermediate feature space (h-space) of a diffusion model under a fixed prompt, capturing artist-level style purely from visual statistics rather than text, which reduces text-dependent bias.</cite> This module is implemented in this repository as the **Style Extraction Function (SEF)**, a lightweight one-hidden-layer MLP `f_t` that transforms a diffusion feature `h_t` into a style-conditioned residual:
-
-  
-$h_t = h_t + w \cdot \Delta \mathbf{h}_t$
+- **Global Style Guidance (GSG)** — <cite index="13-1">learns a residual global style offset in the intermediate feature space (h-space) of a diffusion model under a fixed prompt, capturing artist-level style purely from visual statistics rather than text, which reduces text-dependent bias.</cite> This module is implemented in this repository as the **Style Extraction Function (SEF)**, a lightweight one-hidden-layer MLP `f_t` that transforms a diffusion feature `h_t` into a style-conditioned residual: $h_t = h_t + w \cdot \Delta \mathbf{h}_t$
 
 - **Content Alignment Guidance (CAG)** — <cite index="13-1">a training-free perceptual guidance mechanism that preserves the semantic structure of the content image while still allowing artist-specific geometric deformation.</cite>
 
